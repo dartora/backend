@@ -27,12 +27,12 @@ export class CrudApiService {
   update(id: string, UpdateArticle: UpdateArticle) {
     return this.articleModel.findByIdAndUpdate(
       { _id: id },
-      { UpdateArticle },
+      { $set: UpdateArticle },
       { new: true },
     );
   }
 
   remove(id: string) {
-    return this.articleModel.remove({ _id: id }).exec();
+    return this.articleModel.deleteOne({ _id: id }).exec();
   }
 }
