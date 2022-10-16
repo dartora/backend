@@ -3,12 +3,12 @@ import { CreateArticle } from './dto/create-article.dto';
 import { UpdateArticle } from './dto/update-article.dto';
 import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
-import { Article, ArticleDocument } from './entities/article.entity';
+import { Articles, ArticlesDocument } from './entities/articles.entity';
 
 @Injectable()
 export class CrudApiService {
   constructor(
-    @InjectModel(Article.name) private articleModel: Model<ArticleDocument>,
+    @InjectModel(Articles.name) private articleModel: Model<ArticlesDocument>,
   ) {}
 
   create(CreateArticle: CreateArticle) {

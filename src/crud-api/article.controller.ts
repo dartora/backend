@@ -11,18 +11,17 @@ import { CrudApiService } from './crud-api.service';
 import { CreateArticle } from './dto/create-article.dto';
 import { UpdateArticle } from './dto/update-article.dto';
 
-@Controller('article')
+@Controller('articles')
 export class CrudApiController {
   constructor(private readonly crudApiService: CrudApiService) {}
-
-  @Post()
-  create(@Body() CreateArticle: CreateArticle) {
-    return this.crudApiService.create(CreateArticle);
-  }
 
   @Get()
   findAll() {
     return this.crudApiService.findAll();
+  }
+  @Post()
+  create(@Body() CreateArticle: CreateArticle) {
+    return this.crudApiService.create(CreateArticle);
   }
 
   @Get(':id')
