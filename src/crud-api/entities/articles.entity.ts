@@ -6,7 +6,7 @@ export type ArticlesDocument = Articles & Document;
 @Schema()
 export class Articles {
   @Prop({ required: true })
-  name: string;
+  title: string;
 
   @Prop()
   text: string;
