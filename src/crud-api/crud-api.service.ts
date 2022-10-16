@@ -13,6 +13,7 @@ export class CrudApiService {
 
   create(CreateArticle: CreateArticle) {
     const article = new this.articleModel(CreateArticle);
+    console.log(article);
     return article.save();
   }
 

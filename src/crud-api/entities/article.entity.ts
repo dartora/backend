@@ -5,7 +5,7 @@ export type ArticleDocument = Article & Document;
 
 @Schema()
 export class Article {
-  @Prop()
+  @Prop({ required: true })
   name: string;
 
   @Prop()
@@ -13,6 +13,9 @@ export class Article {
 
   @Prop()
   id: number;
+
+  // @Prop()
+  // author: { name: string };
 }
 
 export const ArticleSchema = SchemaFactory.createForClass(Article);
