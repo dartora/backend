@@ -5,7 +5,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const options = new DocumentBuilder()
     .setTitle('RudeAPI')
-    .setDescription('A Little API to improve my studies')
+    .setDescription('A Little API to improve my studies.')
     .setVersion('1.0')
     .addTag('Rude')
     .build();
